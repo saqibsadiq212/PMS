@@ -25,7 +25,7 @@ export interface Patient {
 }
 
 // Form
-export type PatientFormData = Omit
+export type PatientFormData = Omit<
   Patient,
   'id' | 'appointments' | 'created_at' | 'updated_at'
 >;
