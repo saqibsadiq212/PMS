@@ -1,10 +1,7 @@
+import { PatientsPage } from './pages/PatientsPage';
+
 function App() {
-  return (
-    <div>
-      <h1>Patient Management System</h1>
-      <p>Frontend is up.</p>
-    </div>
-  );
+  return <PatientsPage />;
 }
 
 export default App;
