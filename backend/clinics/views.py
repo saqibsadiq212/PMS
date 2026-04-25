@@ -1,3 +1,33 @@
 from django.shortcuts import render
+from rest_framework import viewsets
 
-# Create your views here.
+from .models import Clinic, Patient
+from .serializers import PatientSerializer
+
+
+def _get_current_clinic() -> Clinic:
+    """
+    Returns the current clinic for the request.
+
+    # Assuming single logged in clinic for this assignment
+    # In production this would derive from request.user.profile.clinic
+    """
+    return Clinic.objects.first()
+
+
+class PatientViewSet(viewsets.ModelViewSet):
+    """
+    CRUD Endpoints GET, POST, PUT, DELETE for patients
+    """
+    serializer_class = PatientSerializer
+
+    def get_queryset(self):
+        clinic = _get_current_clinic()  # This will now send first clinic just for assignment 
+        return (
+            Patient.objects
+            .filter(clinic=clinic)
+            .prefetch_related("appointments__clinicians")
+        )
+
+    def perform_create(self, serializer):
+        serializer.save(clinic=_get_current_clinic())
