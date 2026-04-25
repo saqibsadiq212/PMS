@@ -1,0 +1,5 @@
+# Development-only dependencies
+-r requirements.txt
+
+black==24.10.0
+ruff==0.7.0
