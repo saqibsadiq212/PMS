@@ -28,13 +28,14 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 1rem;
+  border-color: 2px #213547;
 }
 
 th,
 td {
   text-align: left;
   padding: 0.75rem 1rem;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid #121213;
 }
 
 th {
@@ -44,4 +45,129 @@ th {
 
 tr:hover td {
   background-color: #f9fafb;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #d1d5db;
+  background: white;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+button:hover:not(:disabled) {
+  background: #f3f4f6;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+button[type='submit'] {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}
+
+button[type='submit']:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+/* Modal */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.modal h2 {
+  margin-top: 0;
+}
+
+.form-row {
+  margin-bottom: 1rem;
+}
+
+.form-row label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.form-row input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+}
+
+.form-row input:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+.form-error {
+  color: #dc2626;
+  font-size: 0.9rem;
+  margin: 0 0 1rem 0;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.row-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-danger {
+  background: #dc2626;
+  color: white;
+  border-color: #dc2626;
+}
+
+.btn-danger:hover:not(:disabled) {
+  background: #b91c1c;
+  border-color: #b91c1c;
+}
+
+.btn-danger-link {
+  background: none;
+  border: none;
+  color: #dc2626;
+  padding: 0.5rem;
+  text-decoration: underline;
+}
+
+.btn-danger-link:hover:not(:disabled) {
+  color: #991b1b;
+  background: none;
 }
