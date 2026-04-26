@@ -9,10 +9,14 @@ def _get_current_clinic() -> Clinic:
     """
     Returns the current clinic for the request.
 
-    # Assuming single logged in clinic for this assignment
+    # Assuming no auth required for this assignment - returns the first clinic in the DB with seed
     # In production this would derive from request.user.profile.clinic
     """
-    return Clinic.objects.first()
+    clinic, _ = Clinic.objects.get_or_create(
+        name="ABC Clinic",
+        defaults={"address": "123 Main Street", "phone": "555-0100"},
+    )
+    return clinic
 
 
 class PatientViewSet(viewsets.ModelViewSet):
