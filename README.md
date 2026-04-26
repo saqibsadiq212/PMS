@@ -39,24 +39,6 @@ docker compose down       # stops containers, preserves data
 docker compose down -v    # also wipes the database
 ```
 
-## Project Structure
-PMS/
-├── backend/              # Django + DRF
-│   ├── clinics/          # main app: models, serializers, views
-│   ├── config/           # project settings, URLs
-│   ├── Dockerfile
-│   └── requirements.txt
-├── frontend/             # React + TypeScript
-│   ├── src/
-│   │   ├── api/          # axios client + service modules
-│   │   ├── components/   # reusable UI components
-│   │   ├── pages/        # top-level views
-│   │   └── types/        # shared TypeScript interfaces
-│   ├── Dockerfile        # multi-stage: Node build → nginx serve
-│   └── nginx.conf
-├── docker-compose.yml    # orchestrates db + backend + frontend
-└── .github/workflows/    # CI configuration
-
 
 ## Data Model
 - **Clinic** has many Patients

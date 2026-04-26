@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Clinic, Clinician, Patient, Appointment
+from .models import Appointment, Clinic, Clinician, Patient
 
 
 @admin.register(Clinic)
